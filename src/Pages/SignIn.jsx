@@ -215,8 +215,7 @@ const SignIn = () => {
                   type={showPassword ? "text" : "password"}
                   required
                   placeholder="ادخل كلمة المرور"
-                  minLength="4"
-                  maxLength="8"
+                  minLength="6"
                   value={formData.password}
                   onChange={handleChange}
                   className={inputStyle("password")}
@@ -248,8 +247,7 @@ const SignIn = () => {
                   type="password"
                   required
                   placeholder="أدخل كلمة المرور مرة أخرى"
-                  minLength="4"
-                  maxLength="8"
+                  minLength="6"
                   value={formData.passwordConfirm}
                   onChange={handleChange}
                   className={inputStyle("passwordConfirm")}

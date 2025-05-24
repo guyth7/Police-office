@@ -19,19 +19,19 @@ const LoginForm = () => {
 
     // Email validation
     if (!formData.email.includes("@") || !/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address.";
+      newErrors.email = "يرجى إدخال عنوان بريد إلكتروني صالح";
     }
 
     // Password validation
     const password = formData.password;
     if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters.";
+      newErrors.password = "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل";
     } else if (!/[a-z]/.test(password)) {
-      newErrors.password = "Password must contain a lowercase letter.";
+      newErrors.password = "يجب أن تحتوي كلمة المرور على حرف صغير";
     } else if (!/[A-Z]/.test(password)) {
-      newErrors.password = "Password must contain an uppercase letter.";
+      newErrors.password = "يجب أن تحتوي كلمة المرور على حرف كبير";
     } else if (!/[0-9]/.test(password)) {
-      newErrors.password = "Password must contain a number.";
+      newErrors.password = "يجب أن تحتوي كلمة المرور على رقم";
     }
 
     setErrors(newErrors);

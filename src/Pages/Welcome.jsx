@@ -1,5 +1,5 @@
 import React from "react";
-import GooeyButton from "../Components/Button";
+import Button from "../Components/Button";
 
 const Welcome = () => {
   return (
@@ -32,19 +32,11 @@ const Welcome = () => {
             المتفانون هنا لخدمة سكاننا وشفائهم والشراكة معهم.{" "}
           </p>
         </div>
+        <div className="flex gap-2 flex-col">
+          <Button text="تسجيل الدخول" to="/home-page/logIn" />
+          <Button text="إنشاء حساب" to="/home-page/signIn" />
+        </div>
       </section>
-      <div className="flex gap-2 flex-col ">
-        <GooeyButton
-          className="flex items-center justify-center "
-          text="إنشاء حساب"
-          to="/home-page/signIn"
-        />
-        <GooeyButton
-          className=" block mr-1"
-          text="تسجيل دخول"
-          to="/home-page/logIn"
-        />
-      </div>
 
       {/* Footer */}
       <footer className="p-8 flex justify-start">

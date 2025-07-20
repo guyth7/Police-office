@@ -1,29 +1,17 @@
 import React from "react";
-import Card from "../Components/Card";
 import LogoutButton from "../Components/LogoutButton";
+import SearchBar from "../Components/SearchBar";
 
-const SelectOption = () => {
+const InquiryPage = () => {
   const handleLogout = () => {
     console.log("تم تسجيل الخروج");
     // هنا يمكن حذف التوكن، إعادة التوجيه، إلخ
   };
 
-  const cardData = [
-    {
-      emoji: "🚗",
-      title: "خدمات المرور",
-      desc: "للتبليغ عن مخالفات السير والحوادث",
-      borderColor: "#00aaff",
-      path: "/home-page/select-option/traffic",
-    },
-    {
-      emoji: "🚨",
-      title: "بلاغات الشرطة",
-      desc: "للتبليغ عن الجرائم والحالات الأمنية",
-      borderColor: "#ff4444",
-      path: "/home-page/select-option/police",
-    },
-  ];
+  const handleSearch = (query) => {
+    console.log("تم البحث عن:", query);
+    // أضف هنا فلترة أو API call
+  };
   return (
     <section className="font-sans welcome-bg text-white min-h-screen flex flex-col">
       {/* Header */}
@@ -44,15 +32,11 @@ const SelectOption = () => {
       {/* Hero Section */}
       <section className="flex-1 flex items-center flex-col justify-center p-16">
         <div className="text-center">
-          <h1 className="text-6xl font-bold mb-6">
-            اختر الجهة المناسبة للتبليغ
-          </h1>
-          <div className="report-wrapper mt-9">
-            <div className="report-card-container">
-              {cardData.map((card, i) => (
-                <Card key={i} {...card} />
-              ))}
-            </div>
+          <h1 className="text-6xl font-bold mb-6">ادخل رقم المركبة</h1>
+        </div>
+        <div className="flex justify-center mt-4">
+          <div className="p-10">
+            <SearchBar onSearch={handleSearch} />
           </div>
         </div>
       </section>
@@ -61,4 +45,4 @@ const SelectOption = () => {
   );
 };
 
-export default SelectOption;
+export default InquiryPage;

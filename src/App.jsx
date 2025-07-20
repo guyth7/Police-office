@@ -6,7 +6,8 @@ import AnimatedRedirect from "./Components/AnimatedRedirect ";
 import LoginForm from "./Pages/LoginForm";
 import SelectOption from "./Pages/SelectOption";
 import TrafficPage from "./Pages/TrafficPage";
-import PolicePage from "./Components/PolicePage";
+import PolicePage from "./Pages/PolicePage";
+import InquiryPage from "./Pages/InquiryPage";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
         <Route
           path="/home-page/select-option/traffic"
           element={<TrafficPage />}
+        />
+        <Route
+          path="/home-page/select-option/traffic/inquiry"
+          element={<InquiryPage />}
         />
         <Route
           path="/home-page/select-option/police"

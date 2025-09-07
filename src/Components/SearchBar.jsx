@@ -1,34 +1,29 @@
-import React, { useState } from "react";
-import { Search } from "lucide-react"; // أيقونة بحث أنيقة
+import React from "react";
+import { Search } from "lucide-react";
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (onSearch) onSearch(query);
-  };
-
+const SearchBar = ({ query, setQuery, onSearch, error }) => {
   return (
-    <form
-      onSubmit={handleSearch}
-      className="flex items-center w-full max-w-md mx-auto bg-white border border-gray-300 rounded-full shadow-sm px-4 py-2 transition focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200"
-    >
-      <Search className="text-gray-500 mr-2" size={20} />
-      <input
-        type="text"
-        className="w-full bg-transparent focus:outline-none text-gray-800 placeholder-gray-400"
-        placeholder="ابحث هنا..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button
-        type="submit"
-        className=" bg-blue-500 text-white px-4 py-1 rounded-full hover:bg-blue-600 transition cursor-pointer"
-      >
-        بحث
-      </button>
-    </form>
+    <div className="w-full max-w-lg text-center">
+      <div className="flex items-center bg-white/10 border border-white/20 rounded-xl overflow-hidden shadow-md backdrop-blur-sm">
+        <input
+          type="number"
+          placeholder="ادخل رقم المركبة (6 أرقام)..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="flex-1 px-4 py-3 text-white bg-transparent placeholder-gray-400 outline-none"
+        />
+        <button
+          onClick={onSearch}
+          className="px-5 py-3 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition font-semibold cursor-pointer"
+        >
+          <Search size={18} />
+          بحث
+        </button>
+      </div>
+      {error && (
+        <p className="text-red-400 text-sm mt-2 font-medium">{error}</p>
+      )}
+    </div>
   );
 };
 

@@ -33,76 +33,6 @@ body {
   background-size: 100% 100%;
 }
 
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.loading-bar-background {
-  --height: 24px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 5px;
-  width: 200px;
-  height: var(--height);
-  background-color: #1f1d1d;
-  box-shadow: #000000be -2px 2px 4px 0px inset;
-  border-radius: calc(var(--height) / 2);
-}
-
-.loading-bar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  --height: 20px;
-  width: 0%;
-  height: var(--height);
-  overflow: hidden;
-  background: rgb(222, 74, 15);
-  background: linear-gradient(0deg, #bf6a08 0%, rgba(249, 199, 79, 1) 100%);
-  border-radius: calc(var(--height) / 2);
-  animation: loading 4s ease-out infinite;
-}
-
-.white-bars-container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.white-bar {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  width: 10px;
-  height: 45px;
-  opacity: 0.3;
-  rotate: 45deg;
-}
-
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-
-  80% {
-    width: 100%;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
 .report-btn {
   padding: 12px 24px;
   font-size: 1em;
@@ -261,11 +191,12 @@ body {
 
 .report-card-title {
   font-size: 1.8em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .report-card-desc {
-  font-size: 0.9em;
+  font-size: 0.7em;
+  line-height: 1.5;
 }
 
 .report-logout {
@@ -285,6 +216,58 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/*search barh */
+.search-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("police-bg.jpg") center/cover no-repeat;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 8px;
+  border-radius: 25px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  width: 200px;
+  font-size: 16px;
+  color: black;
+  text-align: right;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
 .report-btn2 {
   color: white;
   padding: 12px 24px;
@@ -293,27 +276,110 @@ body {
   font-weight: bold;
   text-align: center;
   user-select: none;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: border-color 0.5s ease;
+  border: 3px solid white;
+}
+.serv-1,
+.serv-2,
+.serv-3,
+.serv-4 {
+  transform: translateY(-3px);
+}
+.serv-1:hover {
+  border: 3px solid #ff4500;
+  backdrop-filter: blur(4px);
+}
+.serv-2:hover {
+  border: 3px solid #2d94cb;
+  backdrop-filter: blur(4px);
+}
+.serv-3:hover {
+  border: 3px solid #3af16e;
+  backdrop-filter: blur(4px);
+}
+.serv-4:hover {
+  border: 3px solid #a7b61e;
+  backdrop-filter: blur(4px);
 }
 
-.serv-1,
-.serv-2 {
+/* Dialog */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background: white;
+  padding: 20px;
   border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+  color: black;
+}
+
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: crimson;
+  border: none;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
 }
-.serv-1:hover,
-.serv-2:hover {
-  transform: translateY(-3px);
-  transition: transform 0.3s ease;
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 6px;
 }
-.serv-1 {
-  border: 3px solid rgb(27, 115, 198);
-  padding: 20px 25px;
-  backdrop-filter: blur(4px);
+
+/*Animations */
+.slide-down {
+  animation: slideDown 1s ease-out forwards;
 }
-.serv-2 {
-  border: 3px solid #ff4d4d;
-  padding: 20px 40px;
-  backdrop-filter: blur(4px);
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
 }

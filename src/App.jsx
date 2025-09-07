@@ -23,7 +23,7 @@ function App() {
           element={<TrafficPage />}
         />
         <Route
-          path="/home-page/select-option/traffic/inquiry"
+          path="/home-page/select-option/inquiry"
           element={<InquiryPage />}
         />
         <Route

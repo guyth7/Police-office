@@ -53,7 +53,7 @@ const LoginForm = () => {
 
   return (
     <section className="gardient-bg bg-cover bg-no-repeat w-full min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden sm:max-w-md w-full">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden sm:max-w-md w-full slide-down">
         <div className="px-4 py-5 sm:p-6">
           <h2 className="text-center text-2xl font-semibold text-gray-900 mb-4">
             تسجيل الدخول
@@ -108,7 +108,7 @@ const LoginForm = () => {
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}
-                  className="absolute inset-y-0 right-2 pr-2 flex items-center text-gray-500 hover:text-gray-800"
+                  className="absolute inset-y-0 left-2 pr-2 flex items-center text-gray-500 hover:text-gray-800"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -122,7 +122,9 @@ const LoginForm = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md
+                 shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700
+                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
               >
                 تسجيل الدخول
               </button>

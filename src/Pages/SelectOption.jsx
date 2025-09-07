@@ -11,15 +11,15 @@ const SelectOption = () => {
   const cardData = [
     {
       emoji: "🚗",
-      title: "خدمات المرور",
-      desc: "للتبليغ عن مخالفات السير والحوادث",
+      title: "البحث عن مركبة",
+      desc: "أداة للاستعلام عن حالة المركبة والتحقق من وجود مخالفات، قيود، أو تنبيهات مسجّلة عليها.",
       borderColor: "#00aaff",
-      path: "/home-page/select-option/traffic",
+      path: "/home-page/select-option/inquiry",
     },
     {
       emoji: "🚨",
-      title: "بلاغات الشرطة",
-      desc: "للتبليغ عن الجرائم والحالات الأمنية",
+      title: "خدمات الطوارئ",
+      desc: "واجهة مخصصة للتبليغ عن الحوادث أو طلب المساعدة الفورية، بهدف ضمان استجابة سريعة وفعّالة.",
       borderColor: "#ff4444",
       path: "/home-page/select-option/police",
     },
@@ -42,7 +42,7 @@ const SelectOption = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex items-center flex-col justify-center p-16">
+      <section className="flex-1 flex items-center flex-col justify-center p-16 slide-down">
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-6">
             اختر الجهة المناسبة للتبليغ

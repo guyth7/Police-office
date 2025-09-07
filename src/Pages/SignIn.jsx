@@ -10,6 +10,7 @@ const SignIn = () => {
     username: "",
     gender: "male",
     phone: "",
+    id: "",
     email: "",
     password: "",
     passwordConfirm: "",
@@ -34,6 +35,10 @@ const SignIn = () => {
 
     if (!/^\d{10}$/.test(formData.phone)) {
       errors.phone = "يجب أن يتكون رقم الهاتف من 10 أرقام بالضبط";
+    }
+
+    if (!/^\d{11}$/.test(formData.id)) {
+      errors.id = "يجب أن يتكون رقم الوطني من 11 أرقام بالضبط";
     }
 
     if (!/(?=.*[a-z])/.test(pwd) || !/(?=.*[A-Z])/.test(pwd)) {
@@ -94,7 +99,7 @@ const SignIn = () => {
 
   return (
     <section className="gardient-bg bg-cover bg-no-repeat w-full min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="bg-white shadow-md rounded-lg overflow-hidden sm:max-w-md w-full">
+      <div className="bg-white shadow-md rounded-lg overflow-hidden sm:max-w-md w-full slide-down">
         <div className="px-4 py-5 sm:p-6">
           <div className="text-center text-2xl font-semibold text-gray-900 mb-4">
             إنشاء حساب
@@ -164,7 +169,7 @@ const SignIn = () => {
                 <input
                   id="phone"
                   name="phone"
-                  type="text"
+                  type="number"
                   required
                   placeholder="ادخل رقم الجوال"
                   value={formData.phone}
@@ -174,6 +179,30 @@ const SignIn = () => {
                 {renderError("phone")}
               </div>
               {renderErrorText("phone")}
+            </div>
+
+            {/* ID */}
+            <div>
+              <label
+                htmlFor="id"
+                className="block text-sm font-medium mb-1 text-gray-700"
+              >
+                رقم الوطني
+              </label>
+              <div className="relative">
+                <input
+                  id="id"
+                  name="id"
+                  type="number"
+                  required
+                  placeholder="ادخل رقم الوطني"
+                  value={formData.id}
+                  onChange={handleChange}
+                  className={inputStyle("id")}
+                />
+                {renderError("id")}
+              </div>
+              {renderErrorText("id")}
             </div>
 
             {/* Email */}
@@ -223,7 +252,7 @@ const SignIn = () => {
                 <button
                   type="button"
                   onClick={togglePasswordVisible}
-                  className="absolute inset-y-0 right-2 flex items-center text-gray-500 hover:text-gray-800"
+                  className="absolute inset-y-0 left-2 flex items-center text-gray-500 hover:text-gray-800"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>

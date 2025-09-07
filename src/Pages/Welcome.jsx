@@ -3,9 +3,9 @@ import Button from "../Components/Button";
 
 const Welcome = () => {
   return (
-    <div className="font-sans welcome-bg text-white min-h-screen flex flex-col">
+    <div className="font-sans welcome-bg text-white min-h-screen flex flex-col ">
       {/* Header */}
-      <header className="p-8 flex items-center justify-between">
+      <header className="p-8 flex items-center justify-between slide-down">
         <div className="flex items-center">
           <div className="w-8 h-8 mr-4 rounded-full border-2 border-white overflow-hidden">
             <img
@@ -19,7 +19,7 @@ const Welcome = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex items-center flex-col justify-center p-16">
+      <section className="flex-1 flex items-center flex-col justify-center p-16 slide-down">
         <img
           src="/logo.jpg"
           alt="logo"

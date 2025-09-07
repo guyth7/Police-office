@@ -26,7 +26,7 @@ const TrafficPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex items-center flex-col justify-center p-16">
+      <section className="flex-1 flex items-center flex-col justify-center p-16 slide-down">
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-6">اختر الخدمة المناسبة</h1>
         </div>
